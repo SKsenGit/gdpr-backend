@@ -15,7 +15,7 @@ public class TestController {
         return "Public Content.";
     }
     @GetMapping("/user")
-    @PreAuthorize("hasRole('USER') or hasRole('MODERATOR') or hasRole('ADMIN')")
+    @PreAuthorize("hasRole('USER') or hasRole('MANAGER') or hasRole('ADMIN')")
     public String userAccess() {
         return "User Content.";
     }
@@ -31,6 +31,7 @@ public class TestController {
     public String adminAccess() {
         return "Admin Board.";
     }
+
     @GetMapping("/gdprprocessor")
     @PreAuthorize("hasRole('GDPR_PROCESSOR')")
     public String gdprProcessorAccess() {
